@@ -42,14 +42,16 @@ const IntroPage = ({ navigation }) => {
         </View>
         <View style={styles.buttonsV}>
           <TouchableOpacity
-            style={styles.buttons}>
+            style={styles.buttons}
+            onPress={() => navigation.navigate('RulesPage')}>
             <Text style={styles.buttontext}>ПРАВИЛА</Text>
           </TouchableOpacity>
         </View>
 
         <View style={styles.buttonsV}>
           <TouchableOpacity
-            style={styles.buttons}>
+            style={styles.buttons}
+            onPress={() => navigation.navigate('MoreClinPage')}>
             <Text style={styles.buttontext}>БОЛЬШЕ О ПРОБЕ</Text>
           </TouchableOpacity>
         </View>
