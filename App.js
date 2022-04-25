@@ -7,6 +7,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import IntroPage from './pages/IntroPage';
 import RulesPage from './pages/RulesPage';
 import MoreClinPage from './pages/MoreClinPage';
+import TestPage from './pages/TestPage';
 
 
 const Stack = createStackNavigator();
@@ -48,6 +49,20 @@ const App = () => {
           component={RulesPage}
           options={{
             title: 'Правила',
+            headerStyle: {
+              backgroundColor: '#008000',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          }}
+        />
+        <Stack.Screen
+          name="TestPage"
+          component={TestPage}
+          options={{
+            title: 'Тест',
             headerStyle: {
               backgroundColor: '#008000',
             },
