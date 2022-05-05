@@ -12,8 +12,16 @@ import {
 } from 'react-native';
 
 const TestPage = ({ navigation }) => {
-  const [userName, setUserName] = useState('');
-  const [userEmail, setUserEmail] = useState('');
+  const [userfirstpulse, setfirstpulse] = useState('');
+  const [usersecondpulse, setsecondpulse] = useState('');
+  function typeOf(obj) {
+    if (/^\d+$/.test(obj) == true) {
+      return obj
+    }
+    else {
+      return NaN
+    }
+  }
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
@@ -33,8 +41,8 @@ const TestPage = ({ navigation }) => {
             2. Измеряйте пульс в течение 15 секунд.
           </Text>
           <TextInput
-            value={userName}
-            onChangeText={(username) => setUserName(username)}
+            value={userfirstpulse}
+            onChangeText={(userfirstpulse) => setfirstpulse(userfirstpulse)}
             placeholder={'Введите значение пульса'}
             style={styles.inputStyle}
             
@@ -46,8 +54,8 @@ const TestPage = ({ navigation }) => {
           </Text>
 
           <TextInput
-            value={userEmail}
-            onChangeText={(userEmail) => setUserEmail(userEmail)}
+            value={usersecondpulse}
+            onChangeText={(usersecondpulse) => setsecondpulse(usersecondpulse)}
             placeholder={'Введите значение пульса'}
             style={styles.inputStyle}
             
@@ -55,7 +63,13 @@ const TestPage = ({ navigation }) => {
           />
           <View style={styles.container}>
             <TouchableOpacity
-              style={styles.buttons}>
+              style={styles.buttons} 
+              onPress={() =>
+                navigation.navigate('ResultPage', {
+                  paramKey1: parseInt(typeOf(userfirstpulse)),
+                  paramKey2: parseInt(typeOf(usersecondpulse)),
+                })
+              }>
               <Text style={styles.buttontext}>РЕЗУЛЬТАТ</Text>
             </TouchableOpacity>
           </View>
