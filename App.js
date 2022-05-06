@@ -8,6 +8,7 @@ import IntroPage from './pages/IntroPage';
 import RulesPage from './pages/RulesPage';
 import MoreClinPage from './pages/MoreClinPage';
 import TestPage from './pages/TestPage';
+import ResultPage from './pages/ResultPage';
 
 
 const Stack = createStackNavigator();
@@ -72,7 +73,20 @@ const App = () => {
             },
           }}
         />
-        
+        <Stack.Screen
+          name="ResultPage"
+          component={ResultPage}
+          options={{
+            title: 'Результат',
+            headerStyle: {
+              backgroundColor: '#008000',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
