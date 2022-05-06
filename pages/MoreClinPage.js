@@ -117,7 +117,8 @@ const MoreClinPage = ({ navigation }) => {
       <View style={{ flex: 1 }}>
         <View style={styles.buttonsV}>
           <TouchableOpacity
-            style={styles.buttons}>
+            style={styles.buttons}
+            onPress={() => navigation.navigate('TestPage')}>
             <Text style={styles.buttontext}>НАЧАТЬ</Text>
           </TouchableOpacity>
         </View>
